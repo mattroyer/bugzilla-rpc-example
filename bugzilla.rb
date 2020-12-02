@@ -8,7 +8,7 @@ class Bugzilla
     @number = number
     @username = '<username>'
     @password = '<password>'
-    @bug_url = "http://bugs.mainman.dcs/bugzilla/show_bug.cgi?id=#{@number}"
+    @bug_url = "http://bugs.example.com/bugzilla/show_bug.cgi?id=#{@number}"
   end
 
   def get_bug method
@@ -19,7 +19,7 @@ class Bugzilla
 
     params = URI.encode_www_form(options)
 
-    page = open("http://bugs.mainman.dcs/bugzilla/jsonrpc.cgi?#{params}").read
+    page = open("http://bugs.example.com/bugzilla/jsonrpc.cgi?#{params}").read
 
     @response = JSON.parse page
   end
